@@ -1,0 +1,22 @@
+.about-container {
+    background-color: #F8F8F8;
+    height: 45vh;
+    text-align: center;
+    align-items: center;
+}
+
+.about-title {
+    padding-top: 50px;
+    font-weight: 250;
+    font-size: 3rem;
+}
+
+.about-line {
+    width: 40%;
+}
+
+.about-desc {
+    padding: 0px 80px 0px 80px;
+    font-weight: 200;
+    line-height: 1.5rem;
+}
