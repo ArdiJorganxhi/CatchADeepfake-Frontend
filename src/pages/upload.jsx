@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from '../components/navbar'
 
 export default function Upload() {
   return (
     <div>
-      <h1>Upload Page!</h1>
+      <Navbar />
     </div>
   )
 }
