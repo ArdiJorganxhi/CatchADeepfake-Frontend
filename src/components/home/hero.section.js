@@ -1,7 +1,7 @@
 import React from 'react'
 import HeroBanner from './images/hero-banner.jpeg'
 import './css/hero.section.css'
-import { Link } from 'react-router-dom'
+
 
 export default function HeroSection() {
   return (

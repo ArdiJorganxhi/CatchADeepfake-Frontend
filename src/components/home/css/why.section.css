@@ -1,0 +1,16 @@
+.why-title {
+    padding-top: 50px;
+    font-weight: 250;
+    font-size: 3rem;
+}
+
+.why-line {
+    width: 60%;
+}
+
+.container {
+    padding: 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
