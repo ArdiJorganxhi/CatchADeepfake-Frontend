@@ -3,6 +3,7 @@ import HeroSection from '../components/home/hero.section';
 import Navbar from '../components/navbar';
 import About from '../components/home/about';
 import WhySection from '../components/home/why.section';
+import GetStarted from '../components/home/get.started';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <WhySection />
+      <GetStarted />
     </div>
   )
 }

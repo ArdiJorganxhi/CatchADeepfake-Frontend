@@ -1,0 +1,17 @@
+.get-started-container {
+    background-color: #F8F8F8;
+    padding: 50px;
+}
+
+.get-started-title h3 {
+    font-weight: 250;
+    font-size: 3rem;
+}
+
+.get-started-line {
+    width: 85%;
+}
+
+.button-container {
+    padding: 50px;
+}
