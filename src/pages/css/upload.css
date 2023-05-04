@@ -1,0 +1,15 @@
+.upload-container {
+
+    padding: 180px;
+}
+
+.upload-title h3 {
+    font-weight: 250;
+    font-size: 4rem;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    gap: -5rem;
+}
