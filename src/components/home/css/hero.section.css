@@ -28,9 +28,13 @@
    
 }
 
-
-
 .hero-button p {
+    text-align: left;
+}
+
+.hero-button-container {
+    padding-top: 30px;
+    align-items: start;
     text-align: left;
 }
 

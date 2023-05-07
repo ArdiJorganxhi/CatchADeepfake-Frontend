@@ -31,7 +31,7 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 1.5rem;
-    font-weight: 230;
+    font-weight: 300;
 }
 
 .nav-menu{
@@ -55,7 +55,7 @@
     height: 100%;
     transition: all 0.3 ease;
     position: relative;
-    font-weight: 200;
+    font-weight: 300;
 
 }
 

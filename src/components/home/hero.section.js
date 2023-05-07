@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroBanner from './images/hero-banner.jpeg'
 import './css/hero.section.css'
+import Button from '../button'
 
 
 export default function HeroSection() {
@@ -11,6 +12,10 @@ export default function HeroSection() {
           <div className="hero-section-box-left">
             <h1>We're here to avoid manipulation!</h1>
             <p>Upload your video or audio file to see if there is any manipulation.</p>
+            <div className="hero-button-container">
+            <Button title="Get Started!" navigate="/upload" />
+            </div>
+
         
          
           </div>
