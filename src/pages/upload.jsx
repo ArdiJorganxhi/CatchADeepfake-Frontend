@@ -4,24 +4,48 @@ import './css/upload.css'
 import Button from '../components/button'
 import { useNavigate } from 'react-router';
 import { motion } from 'framer-motion';
+import RequestService from '../services/request.service';
+import { useDispatch } from 'react-redux';
+import { fake, real } from '../redux/slices/isRealSlice';
 
 export default function Upload() {
+
+  const dispatch = useDispatch()
 
   const ref = useRef();
   const navigate = useNavigate()
   const handleClick = () => {
       ref.current.click();
-      navigate('/result')
+    
   };
 
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
-    navigate('/result')
-    // Do something with the selected file
+    
+    RequestService.post("/predict-video").then(
+      res => {
+        if(res.data == "REAL") {
+          dispatch(real())
+          navigate('/result')
+        } else {
+          dispatch(fake())
+          navigate('/result')
+        }
+      }
+    )
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+     RequestService.post("/predict-audio").then(
+      res => {
+        if(res.data == "REAL") {
+          dispatch(real())
+        } else {
+          dispatch(fake())
+        }
+      }
+    )
     navigate('/result')
     
   }
