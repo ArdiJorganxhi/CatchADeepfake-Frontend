@@ -3,6 +3,7 @@ import Navbar from '../components/navbar'
 import './css/upload.css'
 import Button from '../components/button'
 import { useNavigate } from 'react-router';
+import { motion } from 'framer-motion';
 
 export default function Upload() {
 
@@ -25,7 +26,11 @@ export default function Upload() {
     
   }
   return (
-    <div>
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0.5 }}
+  >
       <Navbar />
       <div className="upload-container">
       <div className="upload-title">
@@ -45,6 +50,6 @@ export default function Upload() {
       />
       </form>
       
-    </div>
+    </motion.div>
   )
 }

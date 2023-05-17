@@ -10,8 +10,15 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 3px solid green;
     background-color: transparent;
+}
+
+.green {
+    border: 3px solid green;
+}
+
+.red {
+    border: 3px solid red;
 }
 
 .done-icon {
@@ -19,6 +26,14 @@
     align-items: center;
     color: green;
     margin-top: 50px;
+}
+
+.wrong-icon {
+    font-size: 8.5rem;
+    font-weight: 200;
+    align-items: center;
+    color: red;
+    margin-top: 60px;
 }
 
 .result-desc {

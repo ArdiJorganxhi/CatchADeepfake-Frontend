@@ -5,6 +5,9 @@ import './css/result.css'
 import Button from '../components/button'
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import RealResult from '../components/result/real.result'
+import FakeResult from '../components/result/fake.result'
 
 export default function Result() {
 
@@ -15,24 +18,13 @@ export default function Result() {
   } 
 
   return (
-    <div>
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+  >
       <Navbar />
-      <div className="result-container">
-      <div className="circle">
-        <div className="done-icon">
-        <MdOutlineDone />
-        </div>
-        <div className="result-desc">
-          <h3>Your uploaded video is real!</h3>
-        </div>
-        <div className="buttons-container">
-        <Button title="Return Home" onClick={navigateHome} />
-        <Link to='/upload'>
-        <Button title="Upload another content" />
-        </Link>
-        </div>
-      </div>
-      </div>
-    </div>
+      <FakeResult />
+    </motion.div>
   )
 }
