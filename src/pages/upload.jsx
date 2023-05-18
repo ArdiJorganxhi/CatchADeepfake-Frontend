@@ -12,17 +12,37 @@ export default function Upload() {
 
   const dispatch = useDispatch()
 
-  const ref = useRef();
+  const videoRef = useRef();
+  const audioRef = useRef();
   const navigate = useNavigate()
-  const handleClick = () => {
-      ref.current.click();
-    
+  const handleVideoClick = () => {
+      videoRef.current.click();
   };
 
-  const handleFileInputChange = (event) => {
+  const handleAudioClick = () => {
+    audioRef.current.click();
+  }
+
+  const handleVideoInputChange = (event) => {
     const file = event.target.files[0];
     
     RequestService.post("/predict-video").then(
+      res => {
+        if(res.data == "REAL") {
+          dispatch(real())
+          navigate('/result')
+        } else {
+          dispatch(fake())
+          navigate('/result')
+        }
+      }
+    )
+  };
+
+  const handleAudioInputChange = (event) => {
+    const file = event.target.files[0];
+    
+    RequestService.post("/predict-audio").then(
       res => {
         if(res.data == "REAL") {
           dispatch(real())
@@ -61,15 +81,23 @@ export default function Upload() {
         <h3>Upload your video or audio file.</h3>
       </div>
       <div className="buttons-container">
-        <Button title="Upload video" onClick={handleClick} onSubmit={handleSubmit} />
-        <Button title="Upload audio" onClick={handleClick} />
+        <Button title="Upload video" onClick={handleVideoClick} onSubmit={handleSubmit} />
+        <Button title="Upload audio" onClick={handleAudioClick} />
       </div>
       </div>
       <form onSubmit={handleSubmit}>
       <input
-        ref={ref}
+        ref={videoRef}
         type="file"
-        onChange={handleFileInputChange}
+        accept='video/*'
+        onChange={handleVideoInputChange}
+        style={{ display: "none" }}
+      />
+      <input
+        ref={audioRef}
+        type="file"
+        accept='audio/*'
+        onChange={handleAudioInputChange}
         style={{ display: "none" }}
       />
       </form>

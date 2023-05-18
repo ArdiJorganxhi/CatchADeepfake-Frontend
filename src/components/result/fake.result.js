@@ -20,8 +20,8 @@ export default function FakeResult() {
           <h3>Your uploaded video is fake!</h3>
         </div>
         <div className="buttons-container">
-        <Button title="Return Home" />
-        <Button title="Upload another content" />
+        <Button title="Return Home" navigate="/" />
+        <Button title="Upload another content" navigate="/upload" />
         </div>
       </div>
       </div>
