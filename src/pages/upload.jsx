@@ -11,7 +11,6 @@ import { fake, real } from '../redux/slices/isRealSlice';
 export default function Upload() {
 
   const dispatch = useDispatch()
-
   const videoRef = useRef();
   const audioRef = useRef();
   const navigate = useNavigate()
@@ -25,8 +24,10 @@ export default function Upload() {
 
   const handleVideoInputChange = (event) => {
     const file = event.target.files[0];
+    const formData = new FormData()
+    formData.append('video', file)
     
-    RequestService.post("/predict-video").then(
+    RequestService.post("/predict-video", formData).then(
       res => {
         if(res.data == "REAL") {
           dispatch(real())
