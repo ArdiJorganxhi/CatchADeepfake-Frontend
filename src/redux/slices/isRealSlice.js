@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const isRealSlice = createSlice({
     name: 'isReal',
     initialState: {
-        value: true
+        value: false
     },
     reducers: {
         real: (state) => {

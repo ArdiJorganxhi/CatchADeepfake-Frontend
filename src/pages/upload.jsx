@@ -42,8 +42,10 @@ export default function Upload() {
 
   const handleAudioInputChange = (event) => {
     const file = event.target.files[0];
+    const formData = new FormData()
+    formData.append('audio', file)
     
-    RequestService.post("/predict-audio").then(
+    RequestService.post("/predict-audio", formData).then(
       res => {
         if(res.data == "REAL") {
           dispatch(real())

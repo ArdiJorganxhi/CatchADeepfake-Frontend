@@ -19,7 +19,7 @@ export default function RealResult() {
         <MdOutlineDone />
         </div>
         <div className="result-desc">
-          <h3>Your uploaded video is real!</h3>
+          <h3>Your uploaded content is real!</h3>
         </div>
         <div className="buttons-container">
         <Button title="Return Home" navigate="/" />

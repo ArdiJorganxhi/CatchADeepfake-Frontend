@@ -17,7 +17,7 @@ export default function FakeResult() {
         <BsExclamationLg />
         </div>
         <div className="result-desc">
-          <h3>Your uploaded video is fake!</h3>
+          <h3>Your uploaded content is fake!</h3>
         </div>
         <div className="buttons-container">
         <Button title="Return Home" navigate="/" />
